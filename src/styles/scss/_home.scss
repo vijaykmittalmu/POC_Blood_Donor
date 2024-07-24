@@ -1,0 +1,19 @@
+.main {
+    .textCenter {
+        text-align: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        @extend .textCenter;
+        @include setBorder('border-bottom', $light-gray-color);
+    }
+    tr:nth-child(even) {background-color: $white-color;}
+      th:first-child {
+        width: 25%;
+    }
+}

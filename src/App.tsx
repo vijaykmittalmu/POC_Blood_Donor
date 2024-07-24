@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { RootLayout } from "./components";
+import DonorLists from "./pages/Donors";
+import ForgotPassword from "./pages/ForgotPassword";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
+import SearchDonor from "./pages/SearchDonor";
+import "./styles/main.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RootLayout classes="App">
+        {/* <SearchDonor title="Search Donor" /> */}
+        <DonorLists title="Donor List" />
+      </RootLayout>
+
+      {/* <Login />
+      <Registration />
+      <ForgotPassword /> */}
+    </>
   );
 }
 

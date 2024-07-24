@@ -1,0 +1,7 @@
+@mixin setBorder($borderType, $color, $size: 1px, $type: solid) {
+    #{$borderType}: $size $type $color;
+}
+
+@mixin setMargin($type: margin, $top:0, $left:0, $bottom:0, $right:0) {
+    #{$type}: $top $left $bottom $right;
+}

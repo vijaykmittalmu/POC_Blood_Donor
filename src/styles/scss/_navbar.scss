@@ -1,0 +1,24 @@
+.navigation-bar {
+    padding: 15px 10px;
+    section {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        a {
+            @include setBorder("border", $main-color);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: $main-color;
+
+            &:hover {
+                @include setBorder("border", $white-color);
+                color: $white-color;
+                background-color: $main-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@import "./scss/variables";
+@import "./scss/_mixins";
+
+@import "./scss/navbar";
+
+@import "./scss/banner";
+@import "./scss/home";
+@import "./scss/footer";
+@import "./scss/auth";
+
+
+.App {
+    width: 50%;
+    border: 1px solid $light-gray-color;
+    margin: 0 auto;
+    margin-bottom: 20px;   
+}
+
+.inline-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.button-center {
+    display: flex;
+    justify-content: center;
+    @include setMargin(margin, 10px, 0, 10px, 0);
+}
+
+button[type=submit], button[type=button] {
+    padding: 12px 35px;
+    background:$main-color;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    @include setBorder('border', $dark-color);
+    margin: 0 10px 10px 0;
+}
+
+button[type=button] {
+    background:$white-color;
+    color: $primary-color;
+}
+
+input[type=text], input[type=password], .inputField {
+    width: 80%;
+    padding: 10px 8px;
+    @include setBorder('border', $main-color);
+    outline: 0;
+    font-size: 1rem;
+}
+
+select {
+    width: 50%;
+    margin: 10px auto;
+    @extend .inputField;
+}
