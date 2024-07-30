@@ -1,10 +1,7 @@
 import { FC } from "react";
+import { BloodDonorProps } from "./Home";
 
-interface SearchDonorProps {
-  title: string;
-}
-
-const SearchDonor: FC<SearchDonorProps> = ({ title = "" }) => {
+const SearchDonor: FC<BloodDonorProps> = ({ title = "" }) => {
   return (
     <section>
       <form>
@@ -64,7 +61,7 @@ const SearchDonor: FC<SearchDonorProps> = ({ title = "" }) => {
           </select>
         </section>
         <section className="button-center">
-          <button type="submit">Submit</button>
+          <button type="submit">Search</button>
         </section>
       </form>
     </section>

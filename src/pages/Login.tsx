@@ -17,7 +17,7 @@ const Login = () => {
         </p>
         <section className="inline-wrapper">
           <section>
-            <input type="checkbox" value="Show password" />
+            <input type="checkbox" value="Show password" />{" "}
             <span>Show Password</span>
           </section>
           <section>

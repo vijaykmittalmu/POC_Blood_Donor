@@ -7,6 +7,8 @@
 @import "./scss/home";
 @import "./scss/footer";
 @import "./scss/auth";
+@import "./scss/donors";
+@import "./scss/contact";
 
 
 .App {
@@ -14,6 +16,7 @@
     border: 1px solid $light-gray-color;
     margin: 0 auto;
     margin-bottom: 20px;   
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .inline-wrapper {
@@ -58,4 +61,8 @@ select {
     width: 50%;
     margin: 10px auto;
     @extend .inputField;
+}
+
+.main-color {
+    color: $main-color;
 }

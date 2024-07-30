@@ -28,10 +28,13 @@ const Registration = () => {
         <section className="inline-wrapper">
           <p>
             <input type="radio" id="male" name="gender" value="male" />
+            &nbsp;
             <label htmlFor="male">Male</label>
           </p>
+          &nbsp;&nbsp;
           <p>
             <input type="radio" id="female" name="gender" value="female" />
+            &nbsp;
             <label htmlFor="female">Female</label>
           </p>
         </section>

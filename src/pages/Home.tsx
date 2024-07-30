@@ -1,4 +1,10 @@
-const Home = () => {
+import { FC } from "react";
+
+export interface BloodDonorProps {
+  title: string;
+}
+
+const Home: FC<BloodDonorProps> = ({ title }) => {
   return (
     <main className="main">
       <h2 className="textCenter">Blood Group Compatibility Chart</h2>

@@ -5,7 +5,7 @@ const NavBar = () => {
         <a href="#/">Home</a>
         <a href="#/">Donors</a>
         <a href="#/">Find Donor</a>
-        <a href="#/">Feedback</a>
+        <a href="#/">Contact us</a>
         <a href="#/">Login</a>
       </section>
     </nav>

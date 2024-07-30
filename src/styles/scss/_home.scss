@@ -1,11 +1,16 @@
 .main {
     .textCenter {
         text-align: center;
+        margin: 15px 0;
     }
 
     table {
         border-collapse: collapse;
         width: 100%;
+
+        thead {
+            @include setBorder('border-top', $light-gray-color);
+        }
     }
     th, td {
         padding: 8px;
