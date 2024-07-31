@@ -1,6 +1,8 @@
 import { FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
   const onLoginHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert(1);
@@ -13,7 +15,9 @@ const ForgotPassword = () => {
           <input type="text" placeholder="Email address" name="email address" />
         </p>
         <p className="actionItems">
-          <button type="button">Back</button>
+          <button type="button" onClick={() => navigate(-1)}>
+            Back
+          </button>
           <button type="submit">Submit</button>
         </p>
       </form>

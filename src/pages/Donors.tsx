@@ -1,10 +1,18 @@
-import { FC, lazy, Profiler, Suspense } from "react";
-import mockResponse from "../mockData.json";
+import { lazy, Profiler, Suspense, useEffect } from "react";
 import ErrorBoundary from "../components/ErrorBoundry";
-import { BloodDonorProps } from "./Home";
+import { useTitle } from "../context/TitleContext";
+import { useLoaderData } from "react-router-dom";
 const ListItem = lazy(() => import("../components/ListItem"));
 
-const DonorLists: FC<BloodDonorProps> = ({ title = "" }) => {
+const DonorLists = () => {
+  const { users }: any = useLoaderData();
+  console.log(users);
+  const { setTitle } = useTitle();
+
+  useEffect(() => {
+    setTitle("Donors");
+  }, [setTitle]);
+
   const onRender = (
     id: any,
     phase: any,
@@ -14,12 +22,12 @@ const DonorLists: FC<BloodDonorProps> = ({ title = "" }) => {
     commitTime: any
   ) => {
     console.log("ID : ", id);
-    console.log("phase :", phase);
-    console.log("actualDuration :", actualDuration);
-    console.log("baseDuration :", baseDuration);
-    console.log("startTime :", startTime);
-    console.log("commitTime :", commitTime);
-    console.log("***************************************");
+    // console.log("phase :", phase);
+    // console.log("actualDuration :", actualDuration);
+    // console.log("baseDuration :", baseDuration);
+    // console.log("startTime :", startTime);
+    // console.log("commitTime :", commitTime);
+    // console.log("***************************************");
   };
 
   return (
@@ -36,9 +44,13 @@ const DonorLists: FC<BloodDonorProps> = ({ title = "" }) => {
       <hr className="horizontal" />
 
       <Suspense fallback={<p style={{ margin: "10px" }}>Loading...</p>}>
-        {mockResponse.map((user) => {
+        {users.map((user: any, index: number) => {
           return (
-            <Profiler id={`listitem-${user.name}`} onRender={onRender}>
+            <Profiler
+              key={index}
+              id={`listitem-${user.name}`}
+              onRender={onRender}
+            >
               <ErrorBoundary>
                 <ListItem user={user} />
               </ErrorBoundary>

@@ -1,27 +1,16 @@
-import React, { FC, useState } from "react";
+import React from "react";
 import { NavBar, Banner, Footer } from "../components";
+import { Outlet } from "react-router-dom";
+import { useTitle } from "../context/TitleContext";
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-  classes?: string;
-}
-
-const RootLayout: FC<RootLayoutProps> = ({ classes, children }) => {
-  const [bannerTitle, setBannerTitle] = useState("");
-
-  React.useEffect(() => {
-    React.Children.forEach(children, (child) => {
-      if (React.isValidElement(child)) {
-        setBannerTitle(child.props.title);
-      }
-    });
-  }, [children]);
+const RootLayout = () => {
+  const { title } = useTitle();
 
   return (
-    <div className={classes}>
+    <div className="App">
       <NavBar />
-      <Banner title={bannerTitle} />
-      {children}
+      <Banner title={title} />
+      <Outlet />
       <Footer />
     </div>
   );

@@ -1,7 +1,13 @@
-import { FC, useState } from "react";
-import { BloodDonorProps } from "./Home";
+import { useEffect, useState } from "react";
+import { useTitle } from "../context/TitleContext";
 
-const ContactUs: FC<BloodDonorProps> = ({ title = "" }) => {
+const ContactUs = () => {
+  const { setTitle } = useTitle();
+
+  useEffect(() => {
+    setTitle("Contact us");
+  }, [setTitle]);
+
   const [maxlength, setMaxLength] = useState<number>(0);
   return (
     <div className="contact">

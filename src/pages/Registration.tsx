@@ -1,4 +1,5 @@
 import { FormEvent } from "react";
+import { Link } from "react-router-dom";
 
 const Registration = () => {
   const onLoginHandler = (e: FormEvent<HTMLFormElement>) => {
@@ -54,7 +55,7 @@ const Registration = () => {
         <section className="actionItems">
           <button type="submit">Submit</button>
           <p>
-            Do you have an account? <a href="#/">click here</a>
+            Do you have an account? <Link to="/auth/login">click here</Link>
           </p>
         </section>
       </form>

@@ -5,12 +5,14 @@ import Modal from "react-bootstrap/Modal";
 
 export interface ModalContainerProps extends ListItemProps {
   closeModalHandler?: any;
+  submitBloodRequest?: any;
 }
 
 const ModalContainer: FC<ModalContainerProps> = ({
   user,
   open,
   closeModalHandler,
+  submitBloodRequest,
 }) => {
   return (
     <Modal show={open}>
@@ -34,7 +36,9 @@ const ModalContainer: FC<ModalContainerProps> = ({
         {user.description}
         <br />
         <br />
-        <Button variant="primary">Request</Button>
+        <Button variant="primary" onClick={submitBloodRequest}>
+          Request
+        </Button>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={() => closeModalHandler(false)}>

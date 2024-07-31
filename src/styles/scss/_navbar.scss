@@ -19,6 +19,12 @@
                 color: $white-color;
                 background-color: $main-color;
             }
+
+            &.active {
+                @include setBorder("border", $white-color);
+                color: $white-color;
+                background-color: $main-color;
+            }
         }
     }
 }

@@ -1,7 +1,13 @@
-import { FC } from "react";
-import { BloodDonorProps } from "./Home";
+import { useEffect } from "react";
+import { useTitle } from "../context/TitleContext";
 
-const SearchDonor: FC<BloodDonorProps> = ({ title = "" }) => {
+const SearchDonor = () => {
+  const { setTitle } = useTitle();
+
+  useEffect(() => {
+    setTitle("Search donors");
+  }, [setTitle]);
+
   return (
     <section>
       <form>

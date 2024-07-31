@@ -26,8 +26,8 @@ const ListItem: React.FC<ListItemProps> = ({ user }) => {
     setOpen(!open);
   };
 
-  const closeModalHandler = () => {
-    setOpen(false);
+  const submitBloodRequest = () => {
+    alert("We are working on this feature!");
   };
 
   return (
@@ -52,6 +52,7 @@ const ListItem: React.FC<ListItemProps> = ({ user }) => {
           user={user}
           open={open}
           closeModalHandler={modalHandler}
+          submitBloodRequest={submitBloodRequest}
         />
       )}
     </>
@@ -64,6 +65,7 @@ const ModalComponent: FC<ModalContainerProps> = ({
   user,
   open,
   closeModalHandler,
+  submitBloodRequest,
 }) => {
   if (!container) {
     return null;
@@ -73,6 +75,7 @@ const ModalComponent: FC<ModalContainerProps> = ({
       user={user}
       open={open}
       closeModalHandler={closeModalHandler}
+      submitBloodRequest={submitBloodRequest}
     />,
     container
   );

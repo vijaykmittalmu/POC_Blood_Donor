@@ -1,12 +1,14 @@
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
   return (
     <nav className="navigation-bar">
       <section className="left-section">
-        <a href="#/">Home</a>
-        <a href="#/">Donors</a>
-        <a href="#/">Find Donor</a>
-        <a href="#/">Contact us</a>
-        <a href="#/">Login</a>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/donors">Donors</NavLink>
+        <NavLink to="/search-donors">Find Donor</NavLink>
+        <NavLink to="/contact-us">Contact us</NavLink>
+        <NavLink to="/auth/login">Login</NavLink>
       </section>
     </nav>
   );

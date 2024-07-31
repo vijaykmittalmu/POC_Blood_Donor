@@ -1,10 +1,17 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { useTitle } from "../context/TitleContext";
 
 export interface BloodDonorProps {
   title: string;
 }
 
-const Home: FC<BloodDonorProps> = ({ title }) => {
+const Home = () => {
+  const { setTitle } = useTitle();
+
+  useEffect(() => {
+    setTitle("Blood donors");
+  }, [setTitle]);
+
   return (
     <main className="main">
       <h2 className="textCenter">Blood Group Compatibility Chart</h2>
